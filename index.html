@@ -52,6 +52,26 @@
     hr {
       margin: 2rem 0;
     }
+
+    .masthead {
+      display: flex;
+      justify-content: space-between;   /* name on left, photo on right */
+      align-items: flex-start;           /* top-align the photo with the heading */
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .masthead .headshot {
+      width: 120px;                      /* small; change to 110/130 if you like */
+      height: auto;
+      border-radius: 6px;                /* keeps it rectangular; set 0 for sharp corners */
+      object-fit: cover;
+      margin-left: 12px;                 /* a bit of breathing room from text */
+    }
+    @media (max-width: 640px) {
+      .masthead { flex-direction: column-reverse; align-items: flex-start; gap: 0.75rem; }
+      .masthead .headshot { width: 100px; }
+    }
+
   </style>
 
   <script type="application/ld+json">
@@ -79,22 +99,22 @@
 
 <body>
   <main>
-    <h1>Elif Taşar</h1>
 
-    <img
-      src="headshot-360.jpg"
-      srcset="headshot-240.jpg 240w, headshot-360.jpg 360w"
-      sizes="120px"
-      alt="Elif Taşar"
-      width="120" height="159" loading="lazy"
-      style="float:right; margin:0 0 8px 12px; border-radius:8px; height:auto;">
+    <!-- NEW masthead: name/email/CV on the left, photo on the right -->
+    <div class="masthead">
+      <div>
+        <h1>Elif Taşar</h1>
+        <p class="email"><a href="mailto:elif_tasar@berkeley.edu">elif_tasar@berkeley.edu</a></p>
+        <p class="cv-link"><a href="cv.pdf" target="_blank" rel="noopener noreferrer">CV</a></p>
+      </div>
 
-    <!-- <p class="affiliation">Department of Agricultural and Resource Economics</p>
-    <p class="institution">University of California, Berkeley</p> -->
-    <p class="email"><a href="mailto:elif_tasar@berkeley.edu">elif_tasar@berkeley.edu</a></p>
-    <p class="cv-link">
-      <a href="cv.pdf" target="_blank">CV</a>
-    </p>
+      <img
+        class="headshot"
+        src="headshot-360.jpg"
+        srcset="headshot-240.jpg 240w, headshot-360.jpg 360w"
+        sizes="120px"
+        alt="Elif Taşar">
+    </div>
 
     <p class="blurb">
       Welcome! I am a PhD candidate in the Department of Agricultural and Resource Economics at UC Berkeley. My research fields are labor economics, public finance, and urban economics.
