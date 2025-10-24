@@ -52,24 +52,32 @@
     hr {
       margin: 2rem 0;
     }
-    .research-item {
-      margin: 0.6rem 0;
-      display: flex;
-      flex-direction: column;
-    }
 
-    .research-title {
-      margin: 0;
-      line-height: 1.1;
-    }
+/* Container for one title + byline pair */
+.research-item {
+  margin: 0.6rem 0;          /* space between items */
+  display: flex;             /* prevents margin-collapsing surprises */
+  flex-direction: column;    /* stack the two lines */
+}
 
-    .research-byline {
-      margin-top: -0.1rem;      /* pulls it closer upward */
-      padding-left: 1.2rem;     /* keeps your indent */
-      font-style: italic;       /* italic text */
-      color: inherit;           /* same color as rest of text */
-      line-height: 1.05;        /* compact vertical spacing */
-    }
+/* Title line (kill default <p> margins) */
+.research-item .research-title {
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* Byline line (tight + indented + italic) */
+.research-item .research-byline {
+  margin: 0;                 /* no vertical gap above */
+  padding-left: 1.2rem;      /* indent */
+  font-style: italic;        /* keep italics as you wanted */
+  color: inherit;            /* same color as normal text */
+  line-height: 1.05;         /* compact line spacing */
+}
+
+/* If you want a hairline gap instead of none, swap the margin line above for: */
+/* margin: 0.04rem 0 0 0; */
+
 
   </style>
 
@@ -108,7 +116,7 @@
     </p>
 
     <p class="blurb">
-      Welcome! I am a PhD candidate in the Department of Agricultural and Resource Economics at UC Berkeley. My research uses tools from labor economics and public finance to study individuals' labor market outcomes, inequality, and topics in urban economics. 
+      Welcome! I am a PhD candidate in the Department of Agricultural and Resource Economics at UC Berkeley. My research uses tools from labor economics and public finance to study worker outcomes, inequality, and topics in urban economics. 
     </p>
 
     <p class="blurb tight">
@@ -122,14 +130,15 @@
     </nav> -->
 
     <h2 id="working-papers">Working Papers</h2>
-    <p>
-      <a href="https://eliftasar.github.io/assets/pdfs/Tasar_UCBerkeley_JMP.pdf"
-        target="_blank"
-        rel="noopener noreferrer">
-        Parental Death, Inheritance, and Labor Supply in the United States</a>
-       (Job Market Paper)
-    </p>
-    <p class="research-byline">with John Voorheis</p>
+    <div class="research-item">
+      <p class="research-title">
+        <a href="https://eliftasar.github.io/assets/pdfs/Tasar_UCBerkeley_JMP.pdf" target="_blank" rel="noopener noreferrer">
+          Parental Death, Inheritance, and Labor Supply in the United States
+        </a>
+        (Job Market Paper)
+      </p>
+      <p class="research-byline">with John Voorheis</p>
+    </div>
     <p>Winners and Losers from Mileage-Based Reforms to the Gas Tax</p>
 
     <h2 id="work-in-progress">Work in Progress</h2>
