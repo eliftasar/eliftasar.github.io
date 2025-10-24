@@ -80,7 +80,12 @@
   }
   #ago-abstract{ margin-top: 0.25rem; }
 
-  .paper{ display:flex; flex-direction:column; gap: 0.15rem; }
+  .paper{
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    align-items: flex-start;   /* keeps the button at its natural width */
+  }
   .paper-title{ margin:0; }            /* zero out default paragraph margins */
   .abstract-toggle{ margin:0; }        /* let the gap control spacing */
 
