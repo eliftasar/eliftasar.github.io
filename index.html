@@ -53,31 +53,23 @@
       margin: 2rem 0;
     }
 
-/* Container for one title + byline pair */
 .research-item {
-  margin: 0.6rem 0;          /* space between items */
-  display: flex;             /* prevents margin-collapsing surprises */
-  flex-direction: column;    /* stack the two lines */
+  margin: 0.6rem 0;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Title line (kill default <p> margins) */
 .research-item .research-title {
   margin: 0;
   line-height: 1.1;
 }
 
-/* Byline line (tight + indented + italic) */
 .research-item .research-byline {
-  margin: 0;                 /* no vertical gap above */
-  padding-left: 1.2rem;      /* indent */
-  font-style: italic;        /* keep italics as you wanted */
-  color: inherit;            /* same color as normal text */
-  line-height: 1.05;         /* compact line spacing */
+  margin: 0.12rem 0 0 1.2rem;  /* small gap above "with ..." */
+  font-style: italic;          /* keep italics */
+  color: inherit;
+  line-height: 1.05;
 }
-
-/* If you want a hairline gap instead of none, swap the margin line above for: */
-/* margin: 0.04rem 0 0 0; */
-
 
   </style>
 
