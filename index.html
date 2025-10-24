@@ -52,12 +52,19 @@
     hr {
       margin: 2rem 0;
     }
-.research-item { margin: 0.6rem 0; }
-.research-title { margin: 0; }
-.research-byline {
-  margin: 0.05rem 0 0 1.2rem;  /* was 0.15rem; now tighter */
-  font-style: italic;
-}
+    .research-item{
+      margin: 0.6rem 0;
+      display: flex;              /* prevents margin collapsing */
+      flex-direction: column;
+    }
+
+    .research-title{ margin: 0; line-height: 1.15; }
+    .research-byline{
+      margin: 0;                  /* no vertical gap */
+      padding-left: 1.2rem;       /* indent */
+      line-height: 1.05;          /* very tight */
+    }
+
 
   </style>
 
