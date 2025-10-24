@@ -90,6 +90,18 @@
     margin-top: 0.15rem; 
   }
 
+  /* a tiny bit more space before the HOA byline */
+  #hoa-byline { margin-top: 0.25rem; }  /* adjust to taste */
+
+  /* tighten space between the HOA button and abstract text,
+    and reduce the extra space under the abstract when open */
+  #hoa-abstract { margin-top: 0.15rem; }                 /* was 0.25rem */
+  #hoa-abstract:not([hidden]) { margin-bottom: 0.8rem; } /* was 1.2rem */
+
+  /* keep the HOA button snug */
+  .research-item .abstract-toggle { margin-top: 0.1rem; }
+
+
   /* Spacing for the HOA abstract */
   #hoa-abstract { margin-top: 0.25rem; }
   #hoa-abstract:not([hidden]) { margin-bottom: 1.2rem; }
@@ -175,7 +187,7 @@
     <div id="ago-abstract" hidden> There is ample evidence that some neighborhoods offer greater upward mobility for children than others. Housing tenure stickiness arising from both institutional frictions and preferences of older households, who moved to such neighborhoods when they were raising children, may crowd out opportunities for younger families with children to enter. I document that, in certain metropolitan areas in the U.S., multiple measures of neighborhood-level upward mobility correlate positively with the share of older households without children at home. I next explore the extent to which this correlation varies in areas with tax wedges frequently cited as barriers to moving for established homeowners. In California, I am able to rule out that a tenure-based housing subsidy known as Proposition 13, as currently structured, meaningfully deters older households from moving. In forthcoming work, I investigate whether older households themselves are responsible for a neighborhood's upward mobility and develop a spatial equilibrium model to estimate the congestion costs of housing tenure stickiness. </div>
     <div class="research-item">
       <p class="research-title">Who Benefits from Private Local Governance? Evidence from Homeowner Associations</p>
-      <p class="research-byline">with Manisha Padi</p>        
+    <p class="research-byline" id="hoa-byline">with Manisha Padi</p>       
       <button class="abstract-toggle"
               data-target="hoa-abstract"
               aria-expanded="false"
@@ -185,7 +197,7 @@
     <div id="hoa-abstract" hidden>
       <p>
       <!-- paste the HOA project abstract here -->
-      Homeowner Associations (HOAs) are powerful private governance structures that millions of U.S. homeowners belong to. These organizations levy fees to support common amenities and contractually obligate homeowners to adhere to specific building rules, with the power to foreclose if homeowners fail to meet payments or requirements. Do these contractual agreements yield returns for homeowners in the form of higher housing values and home equity, or do benefits primarily accrue to developers and housing market intermediaries? To what extent do benefits accrue through exclusionary channels? To answer these questions, we first construct a database of state-level HOA laws and their amendments. Next, we use proprietary data to build a panel of property-level HOA membership and loan and property outcomes. Merging the two datasets, we use variation in legislation and matching methods to study the effect of HOAs on household finance. Early results point to limited HOA impacts on property values, home equity, or financial distress on average. In forthcoming work, we will explore variation by HOA restrictiveness and alternative mechanisms explaining the prominence of HOAs.
+      Homeowner Associations (HOAs) are powerful private governance structures that millions of U.S. homeowners belong to. These organizations levy fees to support common amenities and contractually obligate homeowners to adhere to specific building rules, with the power to foreclose if homeowners fail to meet payments or requirements. Do these contractual agreements yield returns for homeowners in the form of higher housing values and home equity, or do benefits primarily accrue to housing developers and housing market intermediaries? To what extent do benefits accrue through exclusionary channels? To answer these questions, we first construct a database of state-level HOA laws and their amendments. Next, we use proprietary data to build a panel of property-level HOA membership and loan and property outcomes. Merging the two datasets, we use variation in legislation and matching methods to study the effect of HOAs on household finance. Early results point to limited HOA impacts on property values, home equity, or financial distress on average. In forthcoming work, we will explore variation by HOA restrictiveness and alternative mechanisms explaining the prominence of HOAs.
       </p>
     </div>   
     </div>
