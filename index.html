@@ -109,22 +109,6 @@
   </script>
 </head>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.abstract-toggle').forEach(function(btn){
-    const id = btn.getAttribute('data-target');
-    const panel = document.getElementById(id);
-    if (!panel) return;
-
-    btn.addEventListener('click', function(){
-      const open = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!open));
-      panel.hidden = open; // show when closed; hide when open
-    });
-  });
-});
-</script>
-
 <body>
   <main>
 
@@ -169,21 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <p class="paper-title">Access to Opportunity with Overlapping Generations</p>
       <button class="abstract-toggle" data-target="ago-abstract" aria-expanded="false" aria-controls="ago-abstract">Abstract</button>
     </div>
-    <div id="ago-abstract" hidden> ... </div>
-    <!-- <p>Access to Opportunity with Overlapping Generations</p> -->
-    <!-- Abstract toggle for Access to Opportunity -->
-    <button class="abstract-toggle"
-            data-target="ago-abstract"
-            aria-expanded="false"
-            aria-controls="ago-abstract">
-      Abstract
-    </button>
-    <div id="ago-abstract" hidden>
-      <p>
-        <!-- paste your abstract here -->
-        There is ample evidence that some neighborhoods offer greater upward mobility for children than others. Housing tenure stickiness arising from various institutional frictions and preferences on the part of older households, who moved to such neighborhoods when they were raising children, may crowd out opportunities for younger families with children to enter. I document that, in certain metropolitan areas in the U.S., multiple measures of neighborhood-level upward mobility correlate positively with the share of older households without children at home. I next explore the extent to which this correlation varies in areas with tax wedges frequently cited as barriers to moving for established homeowners. In California, I am able to rule out a tenure-based housing subsidy known as Proposition 13, as currently structured, as a meaningful barrier to moving among older households. In forthcoming work, I investigate whether older households themselves are responsible for a neighborhood's upward mobility and develop a spatial equilibrium model to estimate the congestion costs of housing tenure stickiness.
-      </p>
-    </div>
+    <div id="ago-abstract" hidden> There is ample evidence that some neighborhoods offer greater upward mobility for children than others. Housing tenure stickiness arising from various institutional frictions and preferences on the part of older households, who moved to such neighborhoods when they were raising children, may crowd out opportunities for younger families with children to enter. I document that, in certain metropolitan areas in the U.S., multiple measures of neighborhood-level upward mobility correlate positively with the share of older households without children at home. I next explore the extent to which this correlation varies in areas with tax wedges frequently cited as barriers to moving for established homeowners. In California, I am able to rule out a tenure-based housing subsidy known as Proposition 13, as currently structured, as a meaningful barrier to moving among older households. In forthcoming work, I investigate whether older households themselves are responsible for a neighborhood's upward mobility and develop a spatial equilibrium model to estimate the congestion costs of housing tenure stickiness. </div>
     <div class="research-item">
       <p class="research-title">Who Benefits from Private Local Governance? Evidence from Homeowner Associations</p>
       <p class="research-byline">with Manisha Padi</p>
@@ -195,5 +165,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     <hr/>
   </main>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.abstract-toggle').forEach(function(btn){
+    const id = btn.getAttribute('data-target');
+    const panel = document.getElementById(id);
+    if (!panel) return;
+
+    btn.addEventListener('click', function(){
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      panel.hidden = open; // show when closed; hide when open
+    });
+  });
+});
+</script>
 </body>
 </html>
