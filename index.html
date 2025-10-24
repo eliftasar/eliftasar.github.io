@@ -6,71 +6,42 @@
 
   <link rel="canonical" href="https://eliftasar.github.io/" />
 
-  <!-- Basic SEO -->
   <title>Elif Taşar | PhD Candidate, UC Berkeley ARE</title>
   <meta name="description" content="Elif Taşar (Elif Tasar) is a PhD candidate in Agricultural & Resource Economics at UC Berkeley researching labor, public finance, and urban economics." />
   <meta name="author" content="Elif Taşar" />
 
-  <!-- Basic styling -->
   <style>
-    body {
-      font-family: sans-serif;
-      line-height: 1.5;
-      margin: 0;
-      padding: 0;
-    }
-    main {
-      max-width: 700px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    h1 {
-      margin-bottom: 0.4rem;
-      font-size: 1.8rem; /* slightly smaller than default h1 */
-    }
-    h2 {
-      font-size: 1.2rem; /* reduce size of section headers */
-      margin-top: 1.5rem;
-    }
-    .affiliation, .institution, .email {
-      margin: 0.2rem 0;
-    }
-    .blurb {
-      margin: 1rem 0 1.5rem;
-    }
-    nav {
-      margin: 1.5rem 0;
-    }
-    nav a {
-      margin-right: 0.75rem;
-      text-decoration: none;
-      color: #0645ad;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    hr {
-      margin: 2rem 0;
-    }
+    :root { --gap: 0.6rem; }            /* one rhythm everywhere */
 
-.research-item {
-  margin: 0.6rem 0;
-  display: flex;
-  flex-direction: column;
-}
+    /* Base */
+    html, body { margin: 0; padding: 0; }
+    body { font-family: sans-serif; line-height: 1.5; }
+    main { max-width: 700px; margin: 2rem auto; padding: 0 1rem; }
 
-.research-item .research-title {
-  margin: 0;
-  line-height: 1.1;
-}
+    /* Headings & paragraphs share the same vertical rhythm */
+    h1 { font-size: 1.8rem; margin: 0 0 var(--gap) 0; }
+    h2 { font-size: 1.2rem; margin: var(--gap) 0; }
+    p  { margin: var(--gap) 0; }
 
-.research-item .research-byline {
-  margin: 0.5rem 0 0 1.2rem;  /* small gap above "with ..." */
-  font-style: italic;          /* keep italics */
-  color: inherit;
-  line-height: 1.05;
-}
+    a { color: #0645ad; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
+    /* Research listing */
+    .research-item {
+      margin: 0;                        /* container adds no extra gap */
+      display: flex;
+      flex-direction: column;
+    }
+    .research-title {                   /* a <p>, so it already has margin = --gap */
+      margin: 0;                        /* keep tight with the byline below */
+      line-height: 1.1;
+    }
+    .research-byline {
+      margin: 0.12rem 0 0 1.2rem;       /* small gap + indent (only exception) */
+      font-style: italic;
+      color: inherit;
+      line-height: 1.05;
+    }
   </style>
 
   <script type="application/ld+json">
@@ -88,64 +59,51 @@
     "email": "mailto:elif_tasar@berkeley.edu",
     "url": "https://eliftasar.github.io/",
     "sameAs": [
-    "https://github.com/eliftasar",
-    "https://www.linkedin.com/in/eliftasar",
-    "https://twitter.com/if_elif_else"
-  ]
+      "https://github.com/eliftasar",
+      "https://www.linkedin.com/in/eliftasar",
+      "https://twitter.com/if_elif_else"
+    ]
   }
   </script>
 </head>
 
 <body>
   <main>
-
     <h1>Elif Taşar</h1>
-    <!-- <p class="affiliation">Department of Agricultural and Resource Economics</p>
-    <p class="institution">University of California, Berkeley</p> -->
+
     <p class="email"><a href="mailto:elif_tasar@berkeley.edu">elif_tasar@berkeley.edu</a></p>
-    <p class="cv-link">
-      <a href="/assets/pdfs/cv.pdf" target="_blank" rel="noopener">CV</a>
-    </p>
+    <p class="cv-link"><a href="/assets/pdfs/cv.pdf" target="_blank" rel="noopener">CV</a></p>
 
-    <p class="blurb">
-      Welcome! I am a PhD candidate in the Department of Agricultural and Resource Economics at UC Berkeley. My research uses tools from labor economics and public finance to study worker outcomes, inequality, and topics in urban economics. 
-    </p>
-
-    <p class="blurb tight">
-      I am on the 2025-2026 job market.
-    </p>
-
-    <!-- <nav>
-      <a href="#research">Research</a>
-      <a href="#teaching">Teaching</a>
-      <a href="cv.pdf">CV</a>
-    </nav> -->
+    <p>Welcome! I am a PhD candidate in the Department of Agricultural and Resource Economics at UC Berkeley. My research uses tools from labor economics and public finance to study worker outcomes, inequality, and topics in urban economics.</p>
+    <p>I am on the 2025–2026 job market.</p>
 
     <h2 id="working-papers">Working Papers</h2>
+
     <div class="research-item">
       <p class="research-title">
         <a href="https://eliftasar.github.io/assets/pdfs/Tasar_UCBerkeley_JMP.pdf" target="_blank" rel="noopener noreferrer">
-          Parental Death, Inheritance, and Labor Supply in the United States</a>
+          Parental Death, Inheritance, and Labor Supply in the United States
+        </a>
         (Job Market Paper)
       </p>
       <p class="research-byline">with John Voorheis</p>
     </div>
+
     <p>Winners and Losers from Mileage-Based Reforms to the Gas Tax</p>
 
     <h2 id="work-in-progress">Work in Progress</h2>
+
     <p>Access to Opportunity with Overlapping Generations</p>
+
     <div class="research-item">
-      <p class="research-title">
-        Who Benefits from Private Local Governance? Evidence from Homeowner Associations
-      </p>
+      <p class="research-title">Who Benefits from Private Local Governance? Evidence from Homeowner Associations</p>
       <p class="research-byline">with Manisha Padi</p>
     </div>
 
     <h2 id="teaching">Teaching</h2>
+
     <p>Econ 155A: Urban Economics, Teaching Assistant</p>
     <p>EnvEcon C176: Climate Change Economics, Teaching Assistant</p>
-
-    <hr/>
   </main>
 </body>
 </html>
