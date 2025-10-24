@@ -52,19 +52,24 @@
     hr {
       margin: 2rem 0;
     }
-    .research-item{
+    .research-item {
       margin: 0.6rem 0;
-      display: flex;              /* prevents margin collapsing */
+      display: flex;
       flex-direction: column;
     }
 
-    .research-title{ margin: 0; line-height: 1.15; }
-    .research-byline{
-      margin: 0;                  /* no vertical gap */
-      padding-left: 1.2rem;       /* indent */
-      line-height: 1.05;          /* very tight */
+    .research-title {
+      margin: 0;
+      line-height: 1.1;
     }
 
+    .research-byline {
+      margin-top: -0.1rem;      /* pulls it closer upward */
+      padding-left: 1.2rem;     /* keeps your indent */
+      font-style: italic;       /* italic text */
+      color: inherit;           /* same color as rest of text */
+      line-height: 1.05;        /* compact vertical spacing */
+    }
 
   </style>
 
