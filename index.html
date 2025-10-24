@@ -90,21 +90,19 @@
     margin-top: 0.15rem; 
   }
 
-  /* a tiny bit more space before the HOA byline */
-  #hoa-byline { margin-top: 0.25rem; }  /* adjust to taste */
-
   /* tighten space between the HOA button and abstract text,
     and reduce the extra space under the abstract when open */
   #hoa-abstract { margin-top: 0.15rem; }                 /* was 0.25rem */
   #hoa-abstract:not([hidden]) { margin-bottom: 0.8rem; } /* was 1.2rem */
+  #hoa-abstract > p:first-child { margin-top: 0; }
+  /* HOA byline spacing (controls gap above the button) */
+  #hoa-byline{
+    margin-top: 0.25rem;      /* if you like a little air above the byline */
+    margin-bottom: 0.45rem;   /* ↑ increase to widen byline→button gap */
+  }
 
   /* keep the HOA button snug */
-  .research-item .abstract-toggle { margin-top: 0.1rem; }
-
-
-  /* Spacing for the HOA abstract */
-  #hoa-abstract { margin-top: 0.25rem; }
-  #hoa-abstract:not([hidden]) { margin-bottom: 1.2rem; }
+  .research-item .abstract-toggle { margin-top: 0.1rem; } 
 
   .paper{
     display: flex;
@@ -197,7 +195,7 @@
     <div id="hoa-abstract" hidden>
       <p>
       <!-- paste the HOA project abstract here -->
-      Homeowner Associations (HOAs) are powerful private governance structures that millions of U.S. homeowners belong to. These organizations levy fees to support common amenities and contractually obligate homeowners to adhere to specific building rules, with the power to foreclose if homeowners fail to meet payments or requirements. Do these contractual agreements yield returns for homeowners in the form of higher housing values and home equity, or do benefits primarily accrue to housing developers and financial institutions? To what extent do benefits accrue through exclusionary channels? To answer these questions, we first construct a database of state-level HOA laws and their amendments. Next, we use proprietary data to build a panel of property-level HOA membership and loan and property outcomes. Merging the two datasets, we use variation in legislation and matching methods to study the effect of HOAs on household finance. Early results point to limited HOA impacts on property values, home equity, or financial distress on average. In forthcoming work, we will explore variation by HOA restrictiveness and alternative mechanisms explaining the prominence of HOAs.
+      Homeowner Associations (HOAs) are powerful private governance structures that millions of U.S. homeowners belong to. These organizations levy fees to support common amenities and contractually obligate homeowners to adhere to specific building rules, with the power to foreclose if homeowners fail to meet payments or requirements. Do these contractual agreements yield returns for homeowners in the form of higher housing values and home equity, or do benefits primarily accrue to housing developers and financial institutions? To answer these questions, we first construct a database of state-level HOA laws and their amendments. Next, we use proprietary data to build a panel of property-level HOA membership and loan and property outcomes. Merging the two datasets, we use variation in legislation and matching methods to study the effect of HOAs on household finance. Early results point to limited HOA impacts on property values, home equity, or financial distress on average. In forthcoming work, we will explore variation by HOA restrictiveness and alternative mechanisms explaining the prominence of HOAs.
       </p>
     </div>   
     </div>
