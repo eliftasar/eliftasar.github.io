@@ -90,22 +90,22 @@
     margin-top: 0.15rem; 
   }
 
-  /* tighten space between the HOA button and abstract text,
-    and reduce the extra space under the abstract when open */
-  #hoa-abstract { margin-top: 0.15rem; }                 /* was 0.25rem */
-  /* 1) make the abstract itself end tight */
-  #hoa-abstract:not([hidden]) { margin-bottom: 0; }   /* or 0.2rem if you want a hair of space */
-  #hoa-abstract > p:last-child { margin-bottom: 0; }  /* kill the paragraph’s own bottom margin */
-  /* 2) shrink the 'Teaching' heading’s top margin only when it follows the HOA abstract */
-  #hoa-abstract:not([hidden]) + h2 { margin-top: 0.6rem; }  /* adjust to taste */
-  /* HOA byline spacing (controls gap above the button) */
-  #hoa-byline{
-    margin-top: 0.25rem;      /* if you like a little air above the byline */
-    margin-bottom: 0.45rem !important;   /* ↑ increase to widen byline→button gap */
-  }
+  /* --- HOA spacing (final) --- */
 
-  /* keep the HOA button snug */
-  .research-item .abstract-toggle { margin-top: 0.1rem; } 
+  /* 1) gap between byline and the HOA button */
+  #hoa-byline { margin-bottom: 0.45rem; }   /* adjust to taste */
+
+  /* 2) abstract block spacing */
+  #hoa-abstract { margin-top: 0.15rem; }          /* small gap above abstract text */
+  #hoa-abstract:not([hidden]) { margin-bottom: 0; }/* no extra space after abstract */
+  #hoa-abstract > p:first-child { margin-top: 0; } /* remove inner paragraph margins */
+  #hoa-abstract > p:last-child  { margin-bottom: 0; }
+
+  /* 3) tighten the next heading (“Teaching”) only when it comes right after the abstract */
+  #hoa-abstract:not([hidden]) + h2 { margin-top: 0.6rem; }
+
+  /* 4) keep the HOA button compact (optional if you already set this elsewhere) */
+  .research-item .abstract-toggle { align-self: flex-start; margin-top: 0; }
 
   .paper{
     display: flex;
