@@ -134,7 +134,8 @@
 /* Tighter vertical spacing in the bio so the image height matches H1→CV */
 .bio h1 { margin: 0 0 .2rem; }
 .bio .email,
-.bio .cv-link { margin: 0 0 .2rem; }
+.bio .cv-link{ margin:0; }                      /* override the .2rem bottom */
+.bio > :last-child{ margin-bottom:0; }          /* belt-and-suspenders: zero the last block */
 
 .headshot-box {
   grid-area: img;
@@ -147,6 +148,7 @@
 }
 
 .headshot {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -225,7 +227,7 @@ main { max-width: 680px; }
         src="/assets/img/headshots/headshot-360.jpg"
         srcset="/assets/img/headshots/headshot-240.jpg 240w,
             /assets/img/headshots/headshot-360.jpg 360w"
-        sizes="(max-width: 640px) 120px, 150px"
+        sizes="(max-width: 640px) 120px, 135px"
         alt="Headshot of Elif Taşar"
         loading="lazy">
     </figure>
