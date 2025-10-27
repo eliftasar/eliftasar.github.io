@@ -36,7 +36,8 @@
       margin: 0.2rem 0;
     }
     .blurb {
-      margin: 1rem 0 1.5rem;
+    .blurb { margin: 1rem 0 .75rem; }  /* bottom gap from Welcome → next line */
+    .blurb.tight { margin-top: 0; }    /* prevent margin-collapsing from increasing it */
     }
     nav {
       margin: 1.5rem 0;
