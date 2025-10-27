@@ -113,6 +113,73 @@
   .paper-title{ margin:0; }            /* zero out default paragraph margins */
   .abstract-toggle{ margin:0; }        /* let the gap control spacing */
 
+/* --- new addition start --- */
+/* Two-row hero:
+   Row 1: [bio | image]  (image height = bio height)
+   Row 2: [welcome spans both columns]
+*/
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 135px;   /* text | photo (slightly slimmer) */
+  grid-template-areas:
+    "bio img"
+    "welcome welcome";
+  column-gap: 1.25rem;
+  align-items: start;
+  margin-bottom: 1.25rem;
+}
+
+.bio { grid-area: bio; min-width: 0; }
+
+/* Tighter vertical spacing in the bio so the image height matches H1→CV */
+.bio h1 { margin: 0 0 .2rem; }
+.bio .email,
+.bio .cv-link{ margin:0; }                      /* override the .2rem bottom */
+.bio > :last-child{ margin-bottom:0; }          /* belt-and-suspenders: zero the last block */
+
+.headshot-box {
+  grid-area: img;
+  /* KEY CHANGES: remove default figure margins, flush-right, and stretch to bio height */
+  margin: 0;                /* <— remove figure’s default margins */
+  justify-self: end;        /* <— align to the right edge of the column */
+  align-self: stretch;      /* <— height equals the bio block */
+  width: 135px;             /* small; tweak to taste (e.g., 140/150) */
+  max-height: none;         /* <— no cap; height is controlled by the bio */
+}
+
+.headshot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;      /* rectangular with soft corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.welcome { grid-area: welcome; }
+
+/* Optional: slightly narrower main column keeps proportions tidy */
+main { max-width: 680px; }
+
+/* Mobile: stack bio, then image, then welcome */
+@media (max-width: 640px) {
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "bio"
+      "img"
+      "welcome";
+    row-gap: .75rem;
+  }
+  .headshot-box {
+    justify-self: start;
+    width: 120px;
+    max-height: 120px;      /* on mobile, keep it modest */
+  }
+}
+/* --- new addition end --- */
+
+
 </style>
 
   <script type="application/ld+json">
@@ -141,17 +208,37 @@
 <body>
   <main>
 
-    <h1>Elif Taşar</h1>
-    <!-- <p class="affiliation">Department of Agricultural and Resource Economics</p>
-    <p class="institution">University of California, Berkeley</p> -->
-    <p class="email"><a href="mailto:elif_tasar@berkeley.edu">elif_tasar@berkeley.edu</a></p>
-    <p class="cv-link">
-      <a href="/assets/pdfs/Tasar_CV.pdf" target="_blank" rel="noopener">CV</a>
-    </p>
+  <header class="hero">
+    <!-- Row 1, left: name + email + CV -->
+    <div class="bio">
+      <h1>Elif Taşar</h1>
+      <p class="email">
+        <a href="mailto:elif_tasar@berkeley.edu">elif_tasar@berkeley.edu</a>
+      </p>
+      <p class="cv-link">
+        <a href="/assets/pdfs/Tasar_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </p>
+    </div>
 
-    <p class="blurb">
-      Welcome! I am a PhD candidate in the Department of Agricultural and Resource Economics at UC Berkeley. My research uses tools from labor economics and public finance to study worker outcomes, inequality, and topics in urban economics. 
+    <!-- Row 1, right: headshot (height equals the bio block) -->
+    <figure class="headshot-box">
+      <img
+        class="headshot"
+        src="/assets/img/headshots/headshot-360.jpg"
+        srcset="/assets/img/headshots/headshot-240.jpg 240w,
+            /assets/img/headshots/headshot-360.jpg 360w"
+        sizes="(max-width: 640px) 120px, 135px"
+        alt="Headshot of Elif Taşar"
+        loading="lazy">
+    </figure>
+
+    <!-- Row 2: Welcome paragraph spans full width below the photo -->
+    <p class="welcome">
+      Welcome! I am a PhD candidate in the Department of Agricultural and Resource Economics at UC Berkeley.
+      My research uses tools from labor economics and public finance to study worker outcomes, inequality,
+      and topics in urban economics.
     </p>
+  </header>
 
     <p class="blurb tight">
       I am on the 2025-2026 job market.
