@@ -113,6 +113,19 @@
   .paper-title{ margin:0; }            /* zero out default paragraph margins */
   .abstract-toggle{ margin:0; }        /* let the gap control spacing */
 
+/* === Make the two gaps equal (no HTML changes) === */
+
+/* 1) Normalize the "Winners and Losers" line (it sits outside .research-item) */
+.research-title { margin: 0; }                  /* reset default <p> margins globally */
+.research-item { margin-bottom: 0; }            /* remove the extra block gap */
+.research-item + .research-title { margin-top: .75rem; }  /* exact gap after “with John Voorheis” */
+
+/* 2) Make the two Teaching lines use the same .75rem gap */
+#teaching + p        { margin: 0; }             /* first course line */
+#teaching + p + p    { margin: .75rem 0 0; }    /* second course line */
+
+/* Tweak .75rem up/down to taste; both places move together */
+
 </style>
 
   <script type="application/ld+json">
