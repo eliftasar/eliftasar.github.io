@@ -113,14 +113,14 @@
   .paper-title{ margin:0; }            /* zero out default paragraph margins */
   .abstract-toggle{ margin:0; }        /* let the gap control spacing */
 
-  /* new addition start */
+/* --- new addition start --- */
 /* Two-row hero:
    Row 1: [bio | image]  (image height = bio height)
    Row 2: [welcome spans both columns]
 */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 150px;   /* text | photo */
+  grid-template-columns: 1fr 135px;   /* text | photo (slightly slimmer) */
   grid-template-areas:
     "bio img"
     "welcome welcome";
@@ -131,19 +131,26 @@
 
 .bio { grid-area: bio; min-width: 0; }
 
+/* Tighter vertical spacing in the bio so the image height matches H1→CV */
+.bio h1 { margin: 0 0 .2rem; }
+.bio .email,
+.bio .cv-link { margin: 0 0 .2rem; }
+
 .headshot-box {
   grid-area: img;
-  align-self: stretch;                /* match the bio block’s height */
-  justify-self: end;                  /* right-align to text column edge */
-  max-height: 170px;                  /* sensible cap so it never looks big */
-  width: 150px;                       /* keep it modest */
+  /* KEY CHANGES: remove default figure margins, flush-right, and stretch to bio height */
+  margin: 0;                /* <— remove figure’s default margins */
+  justify-self: end;        /* <— align to the right edge of the column */
+  align-self: stretch;      /* <— height equals the bio block */
+  width: 135px;             /* small; tweak to taste (e.g., 140/150) */
+  max-height: none;         /* <— no cap; height is controlled by the bio */
 }
 
 .headshot {
   width: 100%;
   height: 100%;
-  object-fit: cover;                  /* neat crop if aspect differs */
-  border-radius: 10px;                /* rectangular (lightly rounded) */
+  object-fit: cover;
+  border-radius: 10px;      /* rectangular with soft corners */
   box-shadow: 0 2px 8px rgba(0,0,0,.08);
 }
 
@@ -163,13 +170,13 @@ main { max-width: 680px; }
     row-gap: .75rem;
   }
   .headshot-box {
+    justify-self: start;
     width: 120px;
-    max-height: 120px;
-    justify-self: start;              /* or 'center' if you prefer */
+    max-height: 120px;      /* on mobile, keep it modest */
   }
 }
+/* --- new addition end --- */
 
-  /* new addition end */ 
 
 </style>
 
