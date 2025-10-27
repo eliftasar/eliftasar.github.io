@@ -114,37 +114,61 @@
   .abstract-toggle{ margin:0; }        /* let the gap control spacing */
 
   /* new addition start */
-  /* --- Hero with rectangular headshot --- */
-  .hero{
-    display:grid;
-    grid-template-columns: 1fr 150px;  /* text | photo */
-    column-gap: 1.25rem;
-    align-items:start;
-    margin-bottom: 1.25rem;
-  }
+/* Two-row hero:
+   Row 1: [bio | image]  (image height = bio height)
+   Row 2: [welcome spans both columns]
+*/
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 150px;   /* text | photo */
+  grid-template-areas:
+    "bio img"
+    "welcome welcome";
+  column-gap: 1.25rem;
+  align-items: start;
+  margin-bottom: 1.25rem;
+}
 
-  .hero-text{ min-width:0; }           /* prevent overflow */
-  .headshot-box{
-    align-self: stretch;               /* match text block height */
-    max-height: 180px;                 /* cap so it never feels big */
-  }
+.bio { grid-area: bio; min-width: 0; }
 
-  .headshot{
-    width:100%;
-    height:100%;
-    object-fit:cover;                  /* crop neatly */
-    border-radius: 10px;               /* rectangular, lightly rounded */
-    box-shadow: 0 2px 8px rgba(0,0,0,.08);
-  }
+.headshot-box {
+  grid-area: img;
+  align-self: stretch;                /* match the bio block’s height */
+  justify-self: end;                  /* right-align to text column edge */
+  max-height: 170px;                  /* sensible cap so it never looks big */
+  width: 150px;                       /* keep it modest */
+}
 
-  /* Slightly wider side margins (narrower content column) */
-  main { max-width: 680px; }           /* was 700px */
+.headshot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                  /* neat crop if aspect differs */
+  border-radius: 10px;                /* rectangular (lightly rounded) */
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
 
-  /* Mobile: stack and keep image modest */
-  @media (max-width: 640px){
-    .hero{ grid-template-columns: 1fr; row-gap: .75rem; }
-    .headshot-box{ max-height: 120px; }
+.welcome { grid-area: welcome; }
+
+/* Optional: slightly narrower main column keeps proportions tidy */
+main { max-width: 680px; }
+
+/* Mobile: stack bio, then image, then welcome */
+@media (max-width: 640px) {
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "bio"
+      "img"
+      "welcome";
+    row-gap: .75rem;
   }
+  .headshot-box {
+    width: 120px;
+    max-height: 120px;
+    justify-self: start;              /* or 'center' if you prefer */
+  }
+}
+
   /* new addition end */ 
 
 </style>
@@ -176,27 +200,34 @@
   <main>
 
   <header class="hero">
-    <div class="hero-text">
+    <!-- Row 1, left: name + email + CV -->
+    <div class="bio">
       <h1>Elif Taşar</h1>
-      <p class="email"><a href="mailto:elif_tasar@berkeley.edu">elif_tasar@berkeley.edu</a></p>
+      <p class="email">
+        <a href="mailto:elif_tasar@berkeley.edu">elif_tasar@berkeley.edu</a>
+      </p>
       <p class="cv-link">
         <a href="/assets/pdfs/Tasar_CV.pdf" target="_blank" rel="noopener">CV</a>
       </p>
-      <p class="blurb">
-        Welcome! I am a PhD candidate in the Department of Agricultural and Resource Economics at UC Berkeley. My research uses tools from labor economics and public finance to study worker outcomes, inequality, and topics in urban economics. 
-      </p>
     </div>
 
-    <!-- Right-aligned, rectangular headshot -->
+    <!-- Row 1, right: headshot (height equals the bio block) -->
     <figure class="headshot-box">
       <img
         class="headshot"
-        src="assets/img/headshots/headshot-360.jpg"
-        srcset="assets/img/headshots/headshot-240.jpg 240w, assets/img/headshots/headshot-360.jpg 360w"
+        src="headshot-360.jpg"
+        srcset="headshot-240.jpg 240w, headshot-360.jpg 360w"
         sizes="(max-width: 640px) 120px, 150px"
         alt="Headshot of Elif Taşar"
         loading="lazy">
     </figure>
+
+    <!-- Row 2: Welcome paragraph spans full width below the photo -->
+    <p class="welcome">
+      Welcome! I am a PhD candidate in the Department of Agricultural and Resource Economics at UC Berkeley.
+      My research uses tools from labor economics and public finance to study worker outcomes, inequality,
+      and topics in urban economics.
+    </p>
   </header>
 
     <p class="blurb tight">
