@@ -44,6 +44,21 @@
     .blurb { margin: 1rem 0 .75rem; }  /* bottom gap from Welcome → next line */
     .blurb.tight { margin-top: 0; }    /* prevent margin-collapsing from increasing it */
     }
+
+    /* Headshot styling */
+    .headshot {
+      float: right;
+      width: 200px;
+      margin-left: 25px;
+      margin-bottom: 15px;
+    }
+
+    /* Clear float after blurb section */
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
     
     nav {
       margin: 1.5rem 0;
@@ -100,7 +115,7 @@
   /* --- HOA spacing (final) --- */
 
   /* 1) gap between byline and the HOA button */
-  #hoa-byline { margin-bottom: 0.4rem; }   /* adjust to taste */
+  #hoa-byline { margin-bottom: 0.3rem; }   /* adjust to taste */
 
   /* 2) abstract block spacing */
   #hoa-abstract { margin-top: 0.15rem; }          /* small gap above abstract text */
@@ -169,13 +184,17 @@
       <a href="/assets/pdfs/Tasar_CV.pdf" target="_blank" rel="noopener">CV</a>
     </p>
 
-    <p class="blurb">
-      Welcome! I am a PhD candidate in the Department of Agricultural and Resource Economics at UC Berkeley. I study topics in labor and urban economics, with a focus on intergenerational and spatial mobility, aging, and housing markets. 
-    </p>
+    <div class="clearfix">                    
+      <img src="/assets/img/headshots/headshot-360.jpg" alt="Elif Taşar" class="headshot">  <!-- ADD THIS LINE -->
+      
+      <p class="blurb">
+        Welcome! I am a PhD candidate...
+      </p>
 
-    <p class="blurb tight">
-      I am on the 2025-2026 job market.
-    </p>
+      <p class="blurb tight">
+        I am on the 2025-2026 job market.
+      </p>
+    </div>                                      
 
     <!-- <nav>
       <a href="#research">Research</a>
