@@ -30,7 +30,8 @@
     }
     h2 {
       font-size: 1.2rem; /* reduce size of section headers */
-      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      clear: both; 
     }
     .affiliation, .institution, .email {
       margin: 0.2rem 0;
@@ -40,10 +41,8 @@
     .email { margin: 0.2rem 0 0.1rem; }
     .email + .cv-link { margin-top: 0.2rem; }  /* was using default <p> margin */
 
-    .blurb {
     .blurb { margin: 1rem 0 .75rem; }  /* bottom gap from Welcome → next line */
     .blurb.tight { margin-top: 0; }    /* prevent margin-collapsing from increasing it */
-    }
 
     /* Headshot styling */
     .headshot {
@@ -124,7 +123,7 @@
   #hoa-abstract > p:last-child  { margin-bottom: 0; }
 
   /* 3) tighten the next heading (“Teaching”) only when it comes right after the abstract */
-  #hoa-abstract:not([hidden]) + h2 { margin-top: 0.6rem; }
+  /*#hoa-abstract:not([hidden]) + h2 { margin-top: 0.6rem; }*/
 
   .paper{
     display: flex;
@@ -191,14 +190,7 @@
 
     <p class="blurb tight">
       I am on the 2025-2026 job market.
-    </p>
-    </div>                                      
-
-    <!-- <nav>
-      <a href="#research">Research</a>
-      <a href="#teaching">Teaching</a>
-      <a href="cv.pdf">CV</a>
-    </nav> -->
+    </p>                                    
 
     <h2 id="working-papers">Working Papers</h2>
     <div class="research-item">
@@ -209,10 +201,11 @@
       </p>
       <p class="research-byline">with John Voorheis</p>
     </div>
-      <p class="research-title"></p>
-        <a href="https://eliftasar.github.io/assets/pdfs/Tasar_GasMileageTax.pdf" target="_blank" rel="noopener noreferrer">
-          Winners and Losers from Mileage-Based Reforms to the Gas Tax</a>
-      </p>
+    <p class="research-title">
+      <a href="https://eliftasar.github.io/assets/pdfs/Tasar_GasMileageTax.pdf" target="_blank" rel="noopener noreferrer">
+        Winners and Losers from Mileage-Based Reforms to the Gas Tax
+      </a>
+    </p>
 
     <h2 id="work-in-progress">Work in Progress</h2>
     <div class="paper">
